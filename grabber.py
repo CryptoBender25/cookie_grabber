@@ -195,7 +195,8 @@ def mainth(data):
 				file.write(f'{email}:{password}:{two_fa_info}\n')
 
 			logger.error(f'{email}:{password}:{two_fa_info} | Need confirmation code')
-
+			
+			
 			return
 
 		except Exception as error:
@@ -213,7 +214,8 @@ def mainth(data):
 				file.write(f'{driver.get_cookies()}\n')
 
 			logger.success(f'{email}:{password}:{two_fa_info} | Cookies have been successfully received')
-
+			with open("success_proxy.txt", "a" as file:
+				file.write(f'{proxy}\n')
 			return
 
 	try:
